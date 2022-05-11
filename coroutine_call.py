@@ -1,6 +1,5 @@
-import asyncio
-import time
 import aiohttp
+import asyncio
 
 import service
 from utils import Utils
@@ -21,12 +20,15 @@ async def runner(post_body: PostBody) -> list[tuple[str, int]]:
             tasks.append(task)
         algo_results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        algo_results = Utils.sorted_algo_scores(algo_results)
-        targets_left = service.get_targets_left_for_api(post_body.guesses, post_body.target)
-        best_guess = Utils.pick_best_guess(algo_results, targets_left)
-        algo_results.remove(best_guess)
-        algo_results.insert(0, best_guess)
-        return algo_results
+        return sorted_algo_results(post_body, algo_results)
+
+def sorted_algo_results(post_body, algo_results):
+    algo_results = Utils.sorted_algo_scores(algo_results)
+    targets_left = service.get_targets_left_for_api(post_body.guesses, post_body.target)
+    best_guess = Utils.pick_best_guess(algo_results, targets_left)
+    algo_results.remove(best_guess)
+    algo_results.insert(0, best_guess)
+    return algo_results
 
 async def guess_score(post_body: PostBody, session, next_guess):
     payload = {"guesses": post_body.guesses, "next_guess": next_guess, "target": post_body.target}
@@ -34,8 +36,11 @@ async def guess_score(post_body: PostBody, session, next_guess):
         return await game_post.json()
 
 if __name__ == "__main__":
+    
+    import time
+
     p_body = PostBody(
-        guesses = ["oater", "shuln"],
+        guesses = ["oater", "clons", "biome"],
         target = "epoxy")
     start_time = time.time()
     results = asyncio.run(runner(p_body))

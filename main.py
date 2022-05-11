@@ -1,9 +1,10 @@
 from typing import Optional
-import json
+import asyncio
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import uvloop
 
 import service
 from utils import Utils
@@ -46,12 +47,12 @@ async def _(body: PostBody):
     return algo.narrowing_score_per_guess(body.next_guess)
 
 @app.post("/onecall")
-async def _(body: PostBody):
+def _(body: PostBody):
     words_left = service.get_targets_left_for_api(body.guesses, body.target)
     if not body.guesses or len(words_left) > 500:
         return Utils.get_starting_words()
-    # uvloop.install()
-    return await coroutine_call.runner(body)
+    uvloop.install()
+    return asyncio.run(coroutine_call.runner(body))
 
 if __name__ == "__main__":
     import uvicorn
