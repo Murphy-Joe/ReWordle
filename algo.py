@@ -5,6 +5,7 @@ from words_left_results import WordsLeftResults
 
 class Algo:
     def __init__(self, middling_words: MiddlingWords):
+        self.middling_words = middling_words
         self.words_for_algo = middling_words.words_for_algo
         self.targets_left = middling_words.targets_left
         self.game = middling_words.middling_letters.filter_results.words_left_filter.game
