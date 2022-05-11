@@ -36,7 +36,7 @@ async def _(body: PostBody) -> list[str]:
 
 @app.post("/bestletters")
 async def _(body: PostBody):
-    return service.get_best_letters_for_api(body.guesses, body.target)
+    return service.get_middling_letters_for_api(body.guesses, body.target)
 
 @app.post("/game")
 async def _(body: PostBody):

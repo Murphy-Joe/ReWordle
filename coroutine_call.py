@@ -6,7 +6,7 @@ import service
 from utils import Utils
 
 async def runner(guess_list: list[str]) -> list[tuple[str, int]]:
-    async with aiohttp.ClientSession("http://0.0.0.0:8000") as session:
+    async with aiohttp.ClientSession("https://v6xqpk.deta.dev") as session:
         guesses_to_run = service.get_middling_words_for_api(guess_list)
         
         tasks = []
@@ -27,7 +27,7 @@ async def guess_score(guess_list, session, next_guess):
         return await game_post.json()
 
 if __name__ == "__main__":
-    guesses = ["basks"]
+    guesses = ["oater", "shuln"]
 
     start_time = time.time()
     results = asyncio.run(runner(guesses))
