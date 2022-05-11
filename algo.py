@@ -40,9 +40,9 @@ class Algo:
 if __name__ == '__main__':
     from middling_letters import MiddlingLetters
 
-    game = WordleGame('epoxy', ['oater', 'shuln'])
-    filter = WordsLeftFilter(game)
-    results = WordsLeftResults(filter)
+    wgame = WordleGame('epoxy', ['oater', 'shuln'])
+    wfilter = WordsLeftFilter(wgame)
+    results = WordsLeftResults(wfilter)
     # print(results.targets_left)
     middling_letters = MiddlingLetters(results)
     # print(middling_letters.letters_for_algo)

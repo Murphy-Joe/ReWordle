@@ -17,11 +17,10 @@ class WordsLeftResults:
 
 
     def fails_included_letters(self, target: str) -> bool:
+        target_w_uppers = Utils.make_second_appearance_of_letter_uppercase(target)
         for letter in self.included_letters: 
-            if letter not in target:
+            if letter not in target_w_uppers:
                 return True
-            else:
-                target = target.replace(letter, '', 1)
 
     def fails_excluded_letters(self, target: str) -> bool:
         for letter in self.excluded_letters:
@@ -55,8 +54,8 @@ class WordsLeftResults:
 
 if __name__ == '__main__':
     from wordle_game import WordleGame
-    game = WordleGame('epoxy', ['oater', 'shuln'])
-    filter = WordsLeftFilter(game)
-    results = WordsLeftResults(filter)
+    wgame = WordleGame('epoxy', ['oater', 'shuln'])
+    wfilter = WordsLeftFilter(wgame)
+    results = WordsLeftResults(wfilter)
     print(results.targets_left)
     # ['biome', 'dodge', 'movie', 'epoxy', 'voice', 'booze', 'diode', 'evoke', 'decoy', 'gecko']

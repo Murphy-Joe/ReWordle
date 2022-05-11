@@ -25,7 +25,7 @@ class Utils:
         return word_builder
 
     @staticmethod
-    def convert_uppercase_to_double_letter(self, results: dict[str, int]) -> dict[str, int]:
+    def convert_uppercase_to_double_letter(results: dict[str, int]) -> dict[str, int]:
         formattedDict = {}
         for k in results.keys():
             if k.isupper():
