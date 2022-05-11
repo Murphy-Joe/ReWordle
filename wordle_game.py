@@ -2,8 +2,8 @@ from datetime import date
 from utils import Utils
 
 class WordleGame:
-    def __init__(self, target: str, guesses: list[str] = None):
-        self.target: str = target
+    def __init__(self, target: str = None, guesses: list[str] = None):
+        self.target = target if target else self.get_todays_target()
         self.guesses: list[str] = guesses if guesses else []
         
     # These 2 methods may go away if wordle is no longer choosing targets based on date
@@ -16,8 +16,8 @@ class WordleGame:
 
 
 if __name__ == '__main__':
-    game = WordleGame('canny')
-    print(Utils.all_targets().index('canny'))
+    game = WordleGame('')
+    
     print(game.days_since_21Jun19th())
     print(game.get_todays_target())
     print(Utils.all_targets().index(game.get_todays_target()))

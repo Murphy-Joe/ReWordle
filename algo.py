@@ -8,6 +8,7 @@ class Algo:
         self.words_for_algo = middling_words.words_for_algo
         self.targets_left = middling_words.targets_left
         self.game = middling_words.middling_letters.filter_results.words_left_filter.game
+        self.algo_scores = self.narrowing_scores()
 
     def play_fake_guess(self, target: str, guess: str) -> int:
         new_game = WordleGame(target)
@@ -43,10 +44,8 @@ if __name__ == '__main__':
     wgame = WordleGame('epoxy', ['oater', 'shuln'])
     wfilter = WordsLeftFilter(wgame)
     results = WordsLeftResults(wfilter)
-    # print(results.targets_left)
     middling_letters = MiddlingLetters(results)
-    # print(middling_letters.letters_for_algo)
     middling_words = MiddlingWords(middling_letters)
-    # print(middling_words.words_for_algo)
     algo = Algo(middling_words)
     print(algo.narrowing_scores())
+    #[('demic', 1.6), ('voice', 1.5), ('biome', 1.1), ('domic', 1.2), ('medic', 1.6), ('myoid', 1.2), ('biked', 1.6), ('bovid', 1.2), ('picky', 1.4), ('kidge', 1.2), ('diode', 1.3), ('micky', 1.2), ('gimpy', 1.2), ('gecko', 2.9), ('dimbo', 1.4), ('combi', 1.4), ('evoke', 1.7), ('deice', 1.3), ('giddy', 1.4), ('ovoid', 1.3), ('pigmy', 1.4), ('kiddy', 1.4), ('dicey', 1.2), ('miked', 1.6), ('diddy', 1.8), ('middy', 1.6), ('dikey', 1.4), ('gibed', 1.4), ('bedim', 1.2), ('cided', 1.6), ('dived', 1.7), ('epoxy', 2.7), ('ogmic', 1.6), ('cebid', 1.2), ('diced', 1.6), ('movie', 1.7), ('dicky', 1.0), ('biddy', 1.4), ('midge', 1.2), ('diked', 1.7), ('gived', 1.2), ('kiddo', 1.4), ('dodge', 1.7), ('imbed', 1.8), ('midgy', 1.2), ('zymic', 1.2), ('bided', 1.8), ('booze', 1.9), ('viced', 1.2), ('decoy', 2.3)]
