@@ -9,7 +9,7 @@ class Algo:
         self.words_for_algo = middling_words.words_for_algo
         self.targets_left = middling_words.targets_left
         self.game = middling_words.middling_letters.filter_results.words_left_filter.game
-        self.algo_scores = self.narrowing_scores()
+
 
     def play_fake_guess(self, target: str, guess: str) -> int:
         new_game = WordleGame(target)
