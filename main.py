@@ -6,6 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 import service
+from utils import Utils
+import coroutine_call
 
 app = FastAPI()
 origins = [
@@ -42,6 +44,14 @@ async def _(body: PostBody):
 async def _(body: PostBody):
     algo = service.create_algo(body.guesses, body.target)
     return algo.narrowing_score_per_guess(body.next_guess)
+
+@app.post("/onecall")
+async def _(body: PostBody):
+    words_left = service.get_targets_left_for_api(body.guesses, body.target)
+    if not body.guesses or len(words_left) > 500:
+        return Utils.get_starting_words()
+    # uvloop.install()
+    return await coroutine_call.runner(body.guesses, words_left)
 
 if __name__ == "__main__":
     import uvicorn

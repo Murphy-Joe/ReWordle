@@ -11,6 +11,11 @@ class Utils:
     def all_playables():
         with open('words/playable_words.json', 'r') as playables_json:
             return json.load(playables_json)
+
+    @staticmethod
+    def get_starting_words():
+        with open('words/starting_words.json', 'r') as starters_json:
+            return json.load(starters_json)
     
     @staticmethod
     def make_second_appearance_of_letter_uppercase(word: str) -> str:
