@@ -41,9 +41,9 @@ def get_sorted_algo_results_for_api(guesses: list[str], target: str = None) -> l
     return Utils.sorted_algo_scores(algo.narrowing_scores())
 
 def get_best_guess_for_api(guesses: list[str], target: str = None) -> tuple[str, int]:
-    algo = create_algo(guesses, target)
+    targets_left = get_targets_left_for_api(guesses, target)
     sorted_algo_results = get_sorted_algo_results_for_api(guesses, target)
-    return Utils.pick_best_guess(sorted_algo_results, algo.targets_left)
+    return Utils.pick_best_guess(sorted_algo_results, targets_left)
     
 if __name__ == '__main__':
     print(get_targets_left_for_api(['oater', 'shuln'], 'epoxy'))
