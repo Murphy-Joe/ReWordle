@@ -51,7 +51,7 @@ async def _(body: PostBody):
     if not body.guesses or len(words_left) > 500:
         return Utils.get_starting_words()
     # uvloop.install()
-    return await coroutine_call.runner(body.guesses, words_left)
+    return await coroutine_call.runner(body)
 
 if __name__ == "__main__":
     import uvicorn
