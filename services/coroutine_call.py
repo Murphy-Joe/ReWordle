@@ -38,7 +38,7 @@ def sorted_algo_results(post_body, algo_results):
 
 async def guess_score(post_body: PostBody, session, next_guess):
     payload = {"guesses": post_body.guesses, "next_guess": next_guess, "target": post_body.target}
-    async with session.post('/game', json=payload) as game_post:
+    async with session.post('/singleguess', json=payload) as game_post:
         return await game_post.json()
 
 if __name__ == "__main__":

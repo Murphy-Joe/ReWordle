@@ -39,12 +39,12 @@ async def _(body: PostBody) -> list[str]:
 async def _(body: PostBody):
     return service.get_middling_letters_for_api(body.guesses, body.target)
 
-@app.post("/game")
+@app.post("/singleguess")
 async def _(body: PostBody):
     algo = service.create_algo(body.guesses, body.target)
     return algo.narrowing_score_per_guess(body.next_guess)
 
-@app.post("/onecall")
+@app.post("/algo")
 async def _(body: PostBody):
     words_left = service.get_targets_left_for_api(body.guesses, body.target)
     if not body.guesses or len(words_left) > 500:
