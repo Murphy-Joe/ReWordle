@@ -11,7 +11,7 @@ class PostBody():
         self.target: str = target
 
 async def runner(post_body: PostBody) -> list[tuple[str, int]]:
-    async with aiohttp.ClientSession("https://v6xqpk.deta.dev") as session:
+    async with aiohttp.ClientSession("https://1vv6d7.deta.dev") as session:
         guesses_to_run = service.get_middling_words_for_api(post_body.guesses, post_body.target)
         
         tasks = []

@@ -67,8 +67,8 @@ if __name__ == '__main__':
 
     wgame = WordleGame('epoxy', ['oater', 'shuln'])
     wfilter = WordsLeftFilter(wgame)
-    results = WordsLeftResults(wfilter)
-    middling_letters = MiddlingLetters(results)
+    filter_results = WordsLeftResults(wfilter)
+    middling_letters = MiddlingLetters(filter_results)
     middling_words = MiddlingWords(middling_letters)
     algo = Algo(middling_words)
     algo_results = algo.narrowing_scores()
