@@ -1,5 +1,12 @@
 from datetime import date
-from utils import Utils
+
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from helper.utils import Utils
 
 class WordleGame:
     def __init__(self, target: str = None, guesses: list[str] = None):

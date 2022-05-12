@@ -1,5 +1,11 @@
-from utils import Utils
-from words_left_filter import WordsLeftFilter
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from helper.utils import Utils
+from words_left.words_left_filter import WordsLeftFilter
 
 class WordsLeftResults:
     def __init__(self, words_left_filter: WordsLeftFilter):
@@ -53,7 +59,7 @@ class WordsLeftResults:
         return possible_answers
 
 if __name__ == '__main__':
-    from wordle_game import WordleGame
+    from game.wordle_game import WordleGame
     wgame = WordleGame('epoxy', ['oater', 'shuln'])
     wfilter = WordsLeftFilter(wgame)
     results = WordsLeftResults(wfilter)

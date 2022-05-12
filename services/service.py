@@ -1,10 +1,16 @@
-from algo import Algo
-from middling_letters import MiddlingLetters
-from middling_words import MiddlingWords
-from utils import Utils
-from wordle_game import WordleGame
-from words_left_filter import WordsLeftFilter
-from words_left_results import WordsLeftResults
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from algorithm.algo import Algo
+from middling.middling_letters import MiddlingLetters
+from middling.middling_words import MiddlingWords
+from helper.utils import Utils
+from game.wordle_game import WordleGame
+from words_left.words_left_filter import WordsLeftFilter
+from words_left.words_left_results import WordsLeftResults
 
 def create_words_left_results(guesses: list[str], target: str = None) -> WordsLeftResults:
     game = WordleGame(target, guesses)

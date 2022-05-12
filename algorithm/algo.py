@@ -1,7 +1,13 @@
-from middling_words import MiddlingWords
-from wordle_game import WordleGame
-from words_left_filter import WordsLeftFilter
-from words_left_results import WordsLeftResults
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from middling.middling_words import MiddlingWords
+from game.wordle_game import WordleGame
+from words_left.words_left_filter import WordsLeftFilter
+from words_left.words_left_results import WordsLeftResults
 
 class Algo:
     def __init__(self, middling_words: MiddlingWords):
@@ -40,7 +46,7 @@ class Algo:
         return collect_guess_scores
 
 if __name__ == '__main__':
-    from middling_letters import MiddlingLetters
+    from middling.middling_letters import MiddlingLetters
 
     wgame = WordleGame('epoxy', ['oater', 'shuln'])
     wfilter = WordsLeftFilter(wgame)

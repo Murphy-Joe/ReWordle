@@ -2,12 +2,11 @@ from typing import Optional
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-# pylint: disable=no-name-in-module
 from pydantic import BaseModel
 
-import service
-from utils import Utils
-import coroutine_call
+from helper.utils import Utils
+from services import coroutine_call
+from services import service
 
 app = FastAPI()
 origins = [

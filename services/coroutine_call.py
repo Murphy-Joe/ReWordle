@@ -1,8 +1,14 @@
 import aiohttp
 import asyncio
 
-import service
-from utils import Utils
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from services import service
+from helper.utils import Utils
 
 class PostBody():
     def __init__(self, guesses = None, target = None, next_guess = None):

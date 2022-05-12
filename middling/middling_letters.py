@@ -1,5 +1,11 @@
-from utils import Utils
-from words_left_results import WordsLeftResults
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from helper.utils import Utils
+from words_left.words_left_results import WordsLeftResults
 
 class MiddlingLetters:
     def __init__(self, filter_results: WordsLeftResults):
@@ -35,12 +41,12 @@ class MiddlingLetters:
         return Utils.convert_uppercase_to_double_letter(sorted_freq_results)
 
 if __name__ == '__main__':
-    from wordle_game import WordleGame
-    from words_left_filter import WordsLeftFilter
+    from words_left.words_left_filter import WordsLeftFilter
+    from game.wordle_game import WordleGame
 
     game = WordleGame('epoxy', ['oater', 'shuln'])
-    filter = WordsLeftFilter(game)
-    results = WordsLeftResults(filter)
+    wfilter = WordsLeftFilter(game)
+    results = WordsLeftResults(wfilter)
     print(results.targets_left)
     middling_letters = MiddlingLetters(results)
     print(middling_letters.letters_for_algo)

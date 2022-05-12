@@ -1,5 +1,11 @@
-from utils import Utils
-from middling_letters import MiddlingLetters
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from helper.utils import Utils
+from middling.middling_letters import MiddlingLetters
 
 class MiddlingWords:
     def __init__(self, middling_letters: MiddlingLetters):
@@ -31,9 +37,9 @@ class MiddlingWords:
         return list(set(best_playable_guesses_w_upper + best_guesses_w_upper_from_targets))
 
 if __name__ == '__main__':
-    from wordle_game import WordleGame
-    from words_left_filter import WordsLeftFilter
-    from words_left_results import WordsLeftResults
+    from game.wordle_game import WordleGame
+    from words_left.words_left_filter import WordsLeftFilter
+    from words_left.words_left_results import WordsLeftResults
 
     game = WordleGame('epoxy', ['oater', 'shuln'])
     filter = WordsLeftFilter(game)

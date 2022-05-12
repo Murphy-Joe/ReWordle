@@ -1,5 +1,11 @@
-from utils import Utils
-from wordle_game import WordleGame
+if __name__ == '__main__':
+    import os, sys
+    currentdir = os.path.dirname(os.path.realpath(__file__))
+    parentdir = os.path.dirname(currentdir)
+    sys.path.insert(0, parentdir)
+
+from helper.utils import Utils
+from game.wordle_game import WordleGame
 
 class WordsLeftFilter:
     def __init__(self, game: WordleGame):
