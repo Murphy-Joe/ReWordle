@@ -4,17 +4,17 @@ class Utils:
 
     @staticmethod
     def all_targets():
-        with open('words/targets.json', 'r') as targets_json:
+        with open('data/targets.json', 'r') as targets_json:
             return json.load(targets_json)
 
     @staticmethod
     def all_playables():
-        with open('words/playable_words.json', 'r') as playables_json:
+        with open('data/playable_words.json', 'r') as playables_json:
             return json.load(playables_json)
 
     @staticmethod
     def get_starting_words():
-        with open('words/starting_words.json', 'r') as starters_json:
+        with open('data/starting_words.json', 'r') as starters_json:
             return json.load(starters_json)
     
     @staticmethod
