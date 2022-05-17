@@ -30,11 +30,11 @@ class Utils:
         return word_builder
 
     @staticmethod
-    def convert_uppercase_to_double_letter(results: dict[str, int]) -> dict[str, int]:
+    def convert_uppercase_to_second_letter(results: dict[str, int]) -> dict[str, int]:
         formattedDict = {}
         for k in results.keys():
             if k.isupper():
-                newKey = f"{k}{k}"
+                newKey = f"2nd-{k}"
                 formattedDict[newKey] = results[k]
             else:
                 formattedDict[k.upper()] = results[k]
