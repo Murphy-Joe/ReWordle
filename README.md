@@ -43,6 +43,7 @@
 ### Approach
 * Take each one of the ~13,000 playable guesses and play each guess against a each target remaining. 
 * Each time a guess is played against a target, we end up with a new amount of targets left.
+* In this case: 
     * If the guess matches the target that's 0 targets left
     * If the guess somehow provided no extra clues, that's 10 targets left
     * If the guess provided some new clues, that will be some number between 0 and 10
