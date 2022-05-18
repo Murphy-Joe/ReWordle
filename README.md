@@ -68,13 +68,17 @@
 
 </center>
 
-- Playing "DICKY" is guaranteed to give us clues that will narrow our remaining targets down to 1. 
+``` 
+Playing "DICKY" is guaranteed to give us clues that will narrow our remaining targets down to 1. 
     - Narrowing score of 1
     - It's also guaranteed not to win on this turn
-- Playing "BIOME" does have a 10% chance to win this turn, but a 20% chance of leaving us with 2 targets left.
+
+Playing "BIOME" does have a 10% chance to win this turn, but a 20% chance of leaving us with 2 targets left.
     - Narrowing score of 1.1
     - Chance to win this turn
-- If the two results had a tie for avg narrowing score, the algorithm decides the tie goes to the guess that has a chance of winning in that turn. 
+
+If the two results had a tie for avg narrowing score, the algorithm decides the tie goes to the guess that has a chance of winning in that turn. 
+```
 
 ### End Result
 - If the algorithm is played start to finish it averages 3.5 guesses to solve Wordle
