@@ -77,7 +77,7 @@ Playing "BIOME" does have a 10% chance to win this turn, but a 20% chance of lea
     - Narrowing score of 1.1
     - Chance to win this turn
 
-If the two results had a tie for avg narrowing score, the algorithm decides the tie goes to the guess that has a chance of winning in that turn. 
+Tie goes to the guess that has a chance of winning in that turn. 
 ```
 
 ### End Result
