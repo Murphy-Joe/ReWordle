@@ -50,7 +50,7 @@
 * After a guess is played against all the possible targets remaining, we can average the amount of words left it created when played against each target
 * This average is referred to as the guess's "narrowing ability"
 ### Example
-- Let's use the top two guesses (out of 13,000+)
+- Using the top two guesses (out of 13,000+)
 <center>
 
 | Guess | Target | Words Left |  | Guess | Target | Words Left |
