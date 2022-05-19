@@ -25,28 +25,34 @@ async def runner(post_body: PostBody) -> list[tuple[str, int]]:
             task = asyncio.create_task(guess_score(post_body, session, next_guess.lower()))
             tasks.append(task)
         algo_results = await asyncio.gather(*tasks, return_exceptions=True)
-
-        return sorted_algo_results(post_body, algo_results)
-
-def sorted_algo_results(post_body, algo_results):
-    algo_results = Utils.sorted_algo_scores(algo_results)
-    targets_left = service.get_targets_left_for_api(post_body.guesses, post_body.target)
-    best_guess = Utils.pick_best_guess(algo_results, targets_left)
-    algo_results.remove(best_guess)
-    algo_results.insert(0, best_guess)
-    return algo_results
+        return packaged_algo_results(post_body, algo_results)
 
 async def guess_score(post_body: PostBody, session, next_guess):
     payload = {"guesses": post_body.guesses, "next_guess": next_guess, "target": post_body.target}
     async with session.post('/singleguess', json=payload) as game_post:
         return await game_post.json()
 
+def packaged_algo_results(post_body, algo_results):
+    algo_results = Utils.sorted_algo_scores(algo_results)
+    words_left_results_obj = service.create_words_left_results(post_body.guesses, post_body.target)
+    best_guess = Utils.pick_best_guess(algo_results, words_left_results_obj.targets_left)
+    algo_results.remove(best_guess)
+    algo_results.insert(0, best_guess)
+
+    hard_mode = [result for result in algo_results if result[0] in words_left_results_obj.hard_mode_guesses_left]
+    target_scores = [result for result in algo_results if result[0] in words_left_results_obj.targets_left]
+    return {
+            "regular_mode": algo_results,
+            "hard_mode": hard_mode,
+            "target_scores": target_scores
+        }
+
 if __name__ == "__main__":
     
     import time
 
     p_body = PostBody(
-        guesses = ["oater", "clons", "biome"],
+        guesses = ["crane"],
         target = "epoxy")
     start_time = time.time()
     results = asyncio.run(runner(p_body))

@@ -31,8 +31,12 @@ def create_algo(guesses: list[str], target: str = None) -> Algo:
 
 
 def get_targets_left_for_api(guesses: list[str], target: str = None) -> list[str]:
-    results = create_words_left_results(guesses, target)
-    return results.targets_left
+    results_obj = create_words_left_results(guesses, target)
+    return results_obj.targets_left
+
+def get_hard_mode_allowable_guesses(guesses: list[str], target: str = None) -> list[str]:
+    results_obj = create_words_left_results(guesses, target)
+    return results_obj.targets_that_pass_filter(hard_mode=True)
 
 def get_middling_letters_for_api(guesses: list[str], target: str = None) -> dict[str, int]:
     middling_letters = create_middling_letters(guesses, target)

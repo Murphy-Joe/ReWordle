@@ -15,6 +15,7 @@ class WordsLeftResults:
         self.excluded_letters = self.words_left_filter.excluded_letters
         self.index_excludes_letters = self.words_left_filter.index_excludes_letters
         self.targets_left = self.targets_that_pass_filter()
+        self.hard_mode_guesses_left = self.targets_that_pass_filter(hard_mode = True)
 
     def fails_indexed_letters(self, target: str) -> bool:
         for idx, letter in self.indexed_letters.items():
@@ -38,10 +39,12 @@ class WordsLeftResults:
             if target[idx] in failing_letters:
                 return True
 
-    def targets_that_pass_filter(self, targets: list[str] = None) -> list[str]:
+    def targets_that_pass_filter(self, targets: list[str] = None, hard_mode = False) -> list[str]:
         possible_answers = []
         if targets is None:
             targets = Utils.all_targets()
+        if hard_mode:
+            targets = Utils.all_playables()
         for target in targets:
             if self.indexed_letters and self.fails_indexed_letters(target):
                 continue
