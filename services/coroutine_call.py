@@ -38,13 +38,14 @@ def packaged_algo_results(post_body, algo_results):
     best_guess = Utils.pick_best_guess(algo_results, words_left_results_obj.targets_left)
     algo_results.remove(best_guess)
     algo_results.insert(0, best_guess)
-
+    
     hard_mode = [[result[0].upper(), result[1]] for result in algo_results if result[0] in words_left_results_obj.hard_mode_guesses_left]
     target_scores = [[result[0].upper(), result[1]] for result in algo_results if result[0] in words_left_results_obj.targets_left]
+    algo_results = [[result[0].upper(), result[1]] for result in algo_results]
     return {
-            "regular_mode": algo_results,
-            "hard_mode": hard_mode,
-            "target_scores": target_scores
+            "regular_mode": algo_results[:8],
+            "hard_mode": hard_mode[:8],
+            "target_scores": target_scores[:8]
         }
 
 if __name__ == "__main__":
