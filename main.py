@@ -48,7 +48,7 @@ async def _(body: PostBody):
 async def _(body: PostBody):
     words_left = service.get_targets_left_for_api(body.guesses, body.target)
     if not body.guesses or len(words_left) > 500:
-        return Utils.get_starting_words()
+        return { "regular_mode": Utils.get_starting_words()}
     return await coroutine_call.runner(body)
 
 if __name__ == "__main__":
