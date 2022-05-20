@@ -3,7 +3,6 @@
 
 ### End Result
 > If the algorithm is played start to finish it averages **3.4257 guesses** to solve Wordle
-
 >>Mathmatician Alex Selby found that [3.4201 guesses](https://sonorouschocolate.com/notes/index.php/The_best_strategies_for_Wordle,_part_2) was his absolute best, using a brute force recursive algorithm that would take days rather than seconds
 
 <details>
