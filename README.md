@@ -63,6 +63,7 @@ Playing "DICKY" is guaranteed to give us clues that will narrow our remaining ta
 Playing "BIOME" does have a 10% chance to win this turn, but a 20% chance of leaving us with 2 targets left.
     - Narrowing score of 1.1
     - Chance to win this turn
+    - Failed to differentiate between DECOY and GECKO
 
 Tie goes to the guess that has a chance of winning in that turn. 
 ```
