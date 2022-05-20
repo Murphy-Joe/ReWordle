@@ -71,6 +71,7 @@ Tie goes to the guess that has a chance of winning in that turn.
 
 <details>
 <summary> Output</summary> 
+
 - A score that represents the narrowing ability of the next guess
 <center>
 <img src="pics/3rdGuessResults.png" alt="third guess" width="400"/>
@@ -82,6 +83,7 @@ Tie goes to the guess that has a chance of winning in that turn.
 
 <details>
 <summary> Inputs</summary> 
+
 - Guesses
 - Clues from guesses
 - Wordle's list of 2,309 possible answers ("common words" I refer to as "targets")
