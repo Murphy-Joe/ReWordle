@@ -19,7 +19,8 @@
 `guesses ranked by "narrowing ability"`
 </center>
 
-# How 
+<details>
+<summary># How</summary> 
 - First off, do you really want to know all details in written form?
 - If so, kudos to you and please email me, you're even more interested in this than I am
 - Here's an abbreviated version
@@ -80,6 +81,7 @@ Playing "BIOME" does have a 10% chance to win this turn, but a 20% chance of lea
 
 Tie goes to the guess that has a chance of winning in that turn. 
 ```
+</details>
 
 ### End Result
 - If the algorithm is played start to finish it averages 3.5 guesses to solve Wordle
