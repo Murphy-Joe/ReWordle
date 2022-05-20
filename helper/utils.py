@@ -5,7 +5,8 @@ class Utils:
     @staticmethod
     def all_targets():
         with open('data/targets.json', 'r') as targets_json:
-            return json.load(targets_json)
+            targets = json.load(targets_json)
+        return sorted(targets)
 
     @staticmethod
     def all_playables():
@@ -15,7 +16,9 @@ class Utils:
     @staticmethod
     def get_starting_words(cnt):
         with open('data/starting_words.json', 'r') as starters_json:
-            return json.load(starters_json[:cnt])
+            starting_words = json.load(starters_json)
+        starting_words = [[word[0].upper(), word[1:]] for word in starting_words]
+        return starting_words[:cnt]
     
     @staticmethod
     def make_second_appearance_of_letter_uppercase(word: str) -> str:
