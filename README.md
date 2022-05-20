@@ -1,5 +1,8 @@
+### Overview
+> Whether it's the first guess with 2309 possible answers or the fourth guess with 3 possible answers, this algorithm uses the "narrowing ability" of a guess to choose the shortest path to winning.
+
 ### End Result
-- If the algorithm is played start to finish it averages 3.5 guesses to solve Wordle
+> If the algorithm is played start to finish it averages 3.5 guesses to solve Wordle
 
 <details>
 <summary> How</summary> 
