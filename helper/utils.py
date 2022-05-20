@@ -17,8 +17,14 @@ class Utils:
     def get_starting_words(cnt):
         with open('data/starting_words.json', 'r') as starters_json:
             starting_words = json.load(starters_json)
+        starting_words_from_targets = [tup for tup in starting_words if tup[0] in Utils.all_targets()]
+        starting_words_from_targets = [[word[0].upper(), word[1:]] for word in starting_words_from_targets]
         starting_words = [[word[0].upper(), word[1:]] for word in starting_words]
-        return starting_words[:cnt]
+        return {
+            "regular_mode": starting_words[:cnt],
+            "hard_mode": starting_words[:cnt],
+            "target_scores": starting_words_from_targets[:cnt]
+        }
     
     @staticmethod
     def make_second_appearance_of_letter_uppercase(word: str) -> str:
