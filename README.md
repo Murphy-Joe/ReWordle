@@ -25,7 +25,7 @@
 ## Algorithm
 ### Goal
 - Any one of the 10 targets remaining could be the right one.  
-- So we want to know which playable guess would have good filtering results verse ALL the possible targets left. 
+- So we want to know which of the 13,000+ playable guess would have good filtering results verse ALL the possible targets left. 
 ### Approach
 * Take each one of the ~13,000 playable guesses and play each guess against a each target remaining. 
 * Each time a guess is played against a target, we end up with a new amount of targets left.
