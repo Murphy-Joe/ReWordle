@@ -13,9 +13,9 @@ class Utils:
             return json.load(playables_json)
 
     @staticmethod
-    def get_starting_words():
+    def get_starting_words(cnt):
         with open('data/starting_words.json', 'r') as starters_json:
-            return json.load(starters_json)
+            return json.load(starters_json[:cnt])
     
     @staticmethod
     def make_second_appearance_of_letter_uppercase(word: str) -> str:
