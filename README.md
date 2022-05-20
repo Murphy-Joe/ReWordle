@@ -1,28 +1,11 @@
-# Inputs
-- Guesses
-- Clues from guesses
-- Wordle's list of 2,309 possible answers ("common words" I refer to as "targets")
-- Wordle's list of ~13,000 acceptable guesses ("dictionary words" I refer to as "playable guesses")  
-<center>
-<img src="pics/first_two_guesses.jpg" alt="first two guesses" width="300"/>  
-
-
-`guesses and clues`
-</center>
-
-# Output
-- A score that represents the narrowing ability of the next guess
-<center>
-<img src="pics/3rdGuessResults.png" alt="third guess" width="400"/>
-
-
-`guesses ranked by "narrowing ability"`
-</center>
+### End Result
+- If the algorithm is played start to finish it averages 3.5 guesses to solve Wordle
 
 <details>
-<summary># How</summary> 
-- First off, do you really want to know all details in written form?
-- If so, kudos to you and please email me, you're even more interested in this than I am
+<summary> How</summary> 
+
+- Do you really want to know all details in written form?  
+- Kudos if so
 - Here's an abbreviated version
 
 ## Words Left
@@ -83,5 +66,30 @@ Tie goes to the guess that has a chance of winning in that turn.
 ```
 </details>
 
-### End Result
-- If the algorithm is played start to finish it averages 3.5 guesses to solve Wordle
+<details>
+<summary> Output</summary> 
+- A score that represents the narrowing ability of the next guess
+<center>
+<img src="pics/3rdGuessResults.png" alt="third guess" width="400"/>
+
+
+`guesses ranked by "narrowing ability"`
+</center>
+</details>
+
+<details>
+<summary> Inputs</summary> 
+- Guesses
+- Clues from guesses
+- Wordle's list of 2,309 possible answers ("common words" I refer to as "targets")
+- Wordle's list of ~13,000 acceptable guesses ("dictionary words" I refer to as "playable guesses")  
+<center>
+<img src="pics/first_two_guesses.jpg" alt="first two guesses" width="300"/>  
+
+
+`guesses and clues`
+</center>
+</details>
+
+
+
