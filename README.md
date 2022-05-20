@@ -13,6 +13,8 @@
     - If we use the OATER and SHULN guesses and clues, that narrows the 2309 possible  targets down to 10
 <center>
 
+<img src="pics/first_two_guesses.jpg" alt="first two guesses" width="300"/>  
+
 ||||||
 |---|---|---|---|---|
 | voice | movie | biome | decoy | gecko |
