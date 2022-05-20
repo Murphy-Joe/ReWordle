@@ -27,7 +27,7 @@
 - Any one of the 10 targets remaining could be the right one.  
 - So we want to know which of the 13,000+ playable guesses would have good filtering results verse ALL the possible targets left. 
 ### Approach
-* Take each one of the ~13,000 playable guesses and play each guess against a each target remaining. 
+* Take each one of the ~13,000 playable guesses and play each guess against each target remaining. 
 * Each time a guess is played against a target, we end up with a new amount of targets left.
 * In this case: 
     * If the guess matches the target that's 0 targets left
