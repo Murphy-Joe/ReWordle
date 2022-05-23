@@ -2,8 +2,8 @@
 > Whether it's the first guess with 2309 possible answers or the fourth guess with 3 possible answers, this algorithm uses the "narrowing ability" of a guess to choose the shortest path to winning.
 
 ### End Result
-> If the algorithm is played start to finish it averages **3.4257 guesses** to solve Wordle
->>Mathmatician Alex Selby found that [3.4201 guesses](https://sonorouschocolate.com/notes/index.php/The_best_strategies_for_Wordle,_part_2) was his absolute best, using a brute force recursive algorithm that would take days rather than seconds
+> If the algorithm is played start to finish it averages **3.4747 guesses** to solve Wordle
+>>Mathmatician Alex Selby has set the bar at [3.4201 guesses](https://sonorouschocolate.com/notes/index.php/The_best_strategies_for_Wordle,_part_2) being the absolute best an algorithm can average. 
 
 <details>
 <summary> How</summary> 
